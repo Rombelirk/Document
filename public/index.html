@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="./css/fa/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+
+
+
+</head>
+<body>
+<div id="blur">
+<form class="card popped-up">
+  <div class="visa">
+    <img src="images/visa.svg" alt=""/>
+  </div>
+  <div class="card-number-title">
+    Номер карты:
+  </div>
+  <input placeholder="4111 1111 1111 1111" class="card-number" id="card_number"/>
+
+
+  <div class="card-line">
+
+  </div>
+
+
+  <section class="expire">
+    <div class="expire-title">
+      Срок действия:
+    </div>
+    <input placeholder="17/10" class="input3" id="expire"/>
+    <div class="short-line">
+
+    </div>
+  </section>
+  <section class="cvv">
+    <div class="cvv-title">
+      CVC/CVV:
+    </div>
+    <input placeholder="123" class="input3" id="cvv"/>
+    <div class="short-line">
+
+    </div>
+  </section>
+  <section class="question-sign">
+    <img src="images/help.svg" alt=""/>
+  </section>
+  <div id="pay" class="pay"><div class="pay-text">Оплатить</div></div>
+</form>
+<div class="blur">
+</div>
+
+</div>
+
+<div id="loader">
+
+  <div class="popped-up-load">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw blue-text"></i>
+  </div>
+  <div class="blur">
+  </div>
+</div>
+
+<div class="container">
+  <div class="left-side">
+    <img class="docs" src="images/docs.svg" alt=""/>
+
+    <div class="left-side-menu">
+      <div class="leftside-items">
+        С чего начать?
+      </div>
+
+      <div class="leftside-items">
+        Способы интеграции
+      </div>
+
+      <div class="leftside-items reg">
+        ПЛАТЕЖНЫЙ ВИДЖЕТ
+      </div>
+
+      <div class="leftside-items reg">
+        Типы платежноо фрейма
+      </div>
+
+      <div class="leftside-items reg">
+        Используемые параметры
+      </div>
+
+      <div class="leftside-items reg">
+        Вызов фрейма
+      </div>
+
+      <div class="leftside-items reg">
+        Тестовые карты
+      </div>
+      <div class="leftside-items reg">
+        ПЛАТЕЖНАЯ СТРАНИЦА
+      </div>
+      <div class="leftside-items">
+        Метод получения статуса операции
+      </div>
+      <div class="leftside-items">
+        Выставление счетов по SMS и E-mail
+      </div>
+      <div class="leftside-items">
+        Данные для тестирования
+      </div>
+      <div class="leftside-items">
+        Рекуррентные платежи
+      </div>
+      <div class="leftside-items">
+        Дополнительные параметры платежа (Extra)
+      </div>
+      <div class="leftside-items">
+        Start и Finish Callback
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="right-side">
+    <div class="right-side-inner">
+      <div class="search">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" name="" class="input2" value="" placeholder="Поиск по документации"/>
+      </div>
+      <div class="rectangle-separator">
+
+      </div>
+      <div class="navigation">
+        <div class="nav1">
+          Документация
+        </div>
+        <div class="arrow">
+          <img height="8px" src="images/arrow.svg" alt=""/>
+        </div>
+        <div class="nav2">
+          Подключение платежного виджета
+        </div>
+      </div>
+
+      <div class="main-header">
+        Подключение платежного виджета
+      </div>
+
+      <div class="article">
+        <div class="head">
+          Типы платежного фрейма
+        </div>
+
+        <div class="content">
+          Существует два метода типа платежного виджета: встроенный в страницу(<span
+                class="blue-text">set</span>) и всплывающий (<span class="blue-text">open</span>). При
+          использовании всплывающего виджета, он будет отображаться по центру экрана, тогда как при
+          использовании встроенного в страницу виджета, его добавление будет произведено в тот элемент,
+          который передается в параметре <span class="blue-text">parent_id</span>.
+        </div>
+
+      </div>
+      <div class="head">
+        Используемые параметры
+      </div>
+      <table class="params">
+        <tr class="row">
+          <td class="blue-text">parent-id*</td>
+          <td>Элемент, в который будет произведено добавление iframe.</td>
+        </tr>
+        <tr class="blue-row">
+          <td class="blue-text">api_key*</td>
+          <td>Ключ терминала, через который проводится подключение к серверу.</td>
+        </tr>
+        <tr class="row">
+          <td class="blue-text">tx_id*</td>
+          <td>Номер транзакции в магазине. Может быть любым набором символов. Должен быть уникален в пределах
+            выбранного терминала.
+          </td>
+        </tr>
+        <tr class="blue-row">
+          <td class="blue-text">description</td>
+          <td>Назначение (описание) платежа.</td>
+        </tr>
+        <tr class="row">
+          <td class="blue-text">amount*</td>
+          <td>Сумма платежа в копейках.</td>
+        </tr>
+        <tr class="blue-row">
+          <td class="blue-text">signature</td>
+          <td>Формирование подписи: md5("amount"+"crypto_key").</td>
+        </tr>
+        <tr class="row">
+          <td class="blue-text">success_redirect</td>
+          <td>URL для возврата при успешном платеже.</td>
+        </tr>
+        <tr class="blue-row">
+          <td class="blue-text">fail_redirect</td>
+          <td>URL для возврата при неуспешном платеже (fail и success URL могут быть одинаковыми).</td>
+        </tr>
+        <tr class="row">
+          <td class="blue-text">rebill</td>
+          <td>При использовании рекуррентных платежей</td>
+        </tr>
+        <tr class="blue-row">
+          <td class="blue-text">extra</td>
+          <td>Дополнительные параметры платежа</td>
+        </tr>
+        <tr class="row">
+          <td class="blue-text">version</td>
+          <td>Версия платежного виджета. Доступны две версии: 1.0.0 и 2.0.0</td>
+        </tr>
+      </table>
+
+      <div class="necessary-params">
+        *Обязательные параметры
+      </div>
+
+      <div class="article">
+        <div class="head">
+          Вызов фрейма
+        </div>
+
+        <div class="content">
+          Выберите тип фрейма, заполните желаемые параметры и нажмите кнопку Вызвать фрейм для просмотра
+          демо-фрейма. Пожалуйста, используйте тестовые карты для совершения демо-платежа.
+        </div>
+        <div class="frame-instructions">
+          <div class="frame-type-buttons">
+            <!--<div class="pop-up-frame-button">-->
+              <!--<div class="inner-button">-->
+
+
+                <!--<img display="inline-block" width="32px" height="32px" src="../images/frame-pop-wh.svg"-->
+                     <!--alt=""/>-->
+                <!--<div class="button-title-active">-->
+                  <!--ВСПЛЫВАЮЩИЙ ФРЕЙМ-->
+                <!--</div>-->
+              <!--</div>-->
+
+            <!--</div>-->
+            <!--<div class="built-in-frame-button">-->
+              <!--<div class="inner-button">-->
+                <!--<img display="inline-block" width="32px" height="32px" src="../images/require.svg"-->
+                     <!--alt=""/>-->
+                <!--<div class="button-title">-->
+
+                  <!--ВСТРОЕННЫЙ ФРЕЙМ-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+          <div class="live-interface">
+            <div class="fields-code" id="fields-code">
+
+            </div>
+            <div id="call-frame" class="call-frame">
+              <div class="call-frame-title">ВЫЗВАТЬ ФРЕЙМ</div>
+            </div>
+
+          </div>
+          <div class="test-cards">
+            <div class="article">
+              <div class="head">
+                Тестовые карты
+              </div>
+
+              <div class="content">
+                Для совершения тестового платежа можно использовать следующие данные карт:
+              </div>
+              <section class="secure">
+                <div class="with3dtext">С 3D Secure</div>
+                <div class="card">
+                  <div class="visa">
+                    <img src="images/visa.svg" alt=""/>
+                  </div>
+                  <div class="card-number-title">
+                    Номер карты:
+                  </div>
+                  <input placeholder="4111 1111 1111 1111" class="card-number"/>
+
+
+                  <div class="card-line">
+
+                  </div>
+
+
+                  <section class="expire">
+                    <div class="expire-title">
+                      Срок действия:
+                    </div>
+                    <input placeholder="17/10" class="input3"/>
+                    <div class="short-line">
+
+                    </div>
+                  </section>
+                  <section class="cvv">
+                    <div class="cvv-title">
+                      CVC/CVV:
+                    </div>
+                    <input placeholder="123" class="input3"/>
+                    <div class="short-line">
+
+                    </div>
+                  </section>
+                  <section class="question-sign">
+                    <img src="images/help.svg" alt=""/>
+                  </section>
+                </div>
+
+
+              </section>
+
+
+              <section class="no-secure">
+                <div class="with3dtext">Без 3D Secure</div>
+                <div class="card">
+                  <div class="visa">
+                    <img src="images/visa.svg" alt=""/>
+                  </div>
+                  <div class="card-number-title">
+                    Номер карты:
+                  </div>
+                  <input placeholder="5555 5555 5555 5511" class="card-number"/>
+
+
+                  <div class="card-line">
+
+                  </div>
+
+
+                  <section class="expire">
+                    <div class="expire-title">
+                      Срок действия:
+                    </div>
+                    <input placeholder="17/10" class="input3"/>
+                    <div class="short-line">
+
+                    </div>
+                  </section>
+                  <section class="cvv">
+                    <div class="cvv-title">
+                      CVC/CVV:
+                    </div>
+                    <input placeholder="123" class="input3"/>
+                    <div class="short-line">
+
+                    </div>
+                  </section>
+                  <section class="question-sign">
+                    <img src="images/help.svg" alt=""/>
+                  </section>
+                </div>
+              </section>
+            </div>
+
+            <div class="">
+              <span class="sec3d">3D secure: </span>
+              <span class="sec3dvalue">12345678</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="blue-header">
+        Платежная страница
+        <img src="images/blue_arrow.svg" alt="" width="10px" height="16px" style="margin-top: 1px;position: absolute;"/>
+      </div>
+      <div class="rectangle-separator">
+
+      </div>
+      <div class="how-to-contact">
+        <header class="contact">
+          Как с нами связаться
+        </header>
+        <div class="content">
+          Если у вас есть вопросы и вы не нашли на них ответы в документации,
+          пишите на <span class="blue-text"><u>support@paymo.ru</u></span> или звоните нам по номеру <span style="font-weight: bold">+7 (495) 369-60-67</span>.
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+<script src="bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $("#call-frame").click(function (e) {
+          e.stopPropagation();
+          $("#blur").toggle();
+      });
+
+      $("#pay").click(function (e) {
+          e.stopPropagation();
+
+
+
+          var card_number = $("#card_number");
+          var cvv = $("#cvv");
+          var expire = $("#expire");
+
+          cvv.click(function() {
+              cvv.css({"backgroundColor":"#00acc1"})
+          });
+          card_number.click(function() {
+              card_number.css({"backgroundColor":"#00acc1"})
+          });
+          expire.click(function() {
+              expire.css({"backgroundColor":"#00acc1"})
+          });
+
+          if (card_number.val() && cvv.val() && expire.val())  {
+
+              $("#blur").toggle();
+              $("#loader").toggle();
+
+              $.post('http://localhost:3000', {
+                  card_number: card_number.val(),
+                  cvv: cvv.val(),
+                  expire: expire.val()
+
+              }).then(function(data){
+                  $("#loader").toggle();
+
+                  alert("Оплата проведена успешно по карте: number: " + data.card_number)
+              });
+
+              card_number.val("");
+              card_number.css({"backgroundColor":"#00acc1"});
+              cvv.val("");
+              cvv.css({"backgroundColor":"#00acc1"});
+              expire.val("");
+              expire.css({"backgroundColor":"#00acc1"});
+
+
+          } else {
+              if(!card_number.val()) {
+                  card_number.css({"backgroundColor":"#ffcccc"});
+              } else {
+                  card_number.css({"backgroundColor":"#00acc1"});
+              }
+              if(!cvv.val()) {
+                  cvv.css({"backgroundColor":"#ffcccc"});
+              } else {
+                  cvv.css({"backgroundColor":"#00acc1"});
+              }
+              if(!expire.val()) {
+                  expire.css({"backgroundColor":"#ffcccc"});
+              } else {
+                  expire.css({"backgroundColor":"#00acc1"});
+              }
+
+          }
+
+
+
+
+
+
+      });
+
+
+  });
+
+</script>
+
+</body>
+</html>
